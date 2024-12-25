@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Digit Recognition</title>
+</head>
+<body>
+    <br>
+    <br>
+    <div class="container">
+        <h1>Digit Recognition</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="image">Upload an image:</label>
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if result is not none %}
+        <div class="result">
+            <h2>Prediction: {{ result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+    <br>
+    <br>
+    <h3> Handwritten Digit Recognition</h3>
+    <h4> This project focuses on the recognition of handwritten digits
+        <br>
+        The primary objective is to develop a machine learning model capable of accurately predicting numerical digits (0 to 9) from input images.<br>
+         To enhance usability and visual interaction, a web-based interface will be integrated, <br>
+         allowing users to upload individual images and receive the corresponding predicted digit as output.<br>
+        <br>
+
+
+    </h4>
+</body>
+</html>
